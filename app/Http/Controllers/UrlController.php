@@ -58,7 +58,7 @@ class UrlController extends Controller
 
         $url = Url::create($data);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'URL created successfully.');
         
     }
 
@@ -85,21 +85,26 @@ class UrlController extends Controller
      */
     public function update(UpdateUrlRequest $request, Url $url)
     {
-        $redirectResponseSafeUrl = $this->checkSafeUrl($request->url);
-        if ($redirectResponseSafeUrl) {
-            return $redirectResponseSafeUrl;
-        }
+        if($request->url !== $url->url){ 
+            $redirectResponseSafeUrl = $this->checkSafeUrl($request->url);
+            if ($redirectResponseSafeUrl) {
+                return $redirectResponseSafeUrl;
+            }
 
-        $redirectResponseUrlExists = $this->checkIfUrlExists($request->url);
-        if ($redirectResponseUrlExists) {
-            return $redirectResponseUrlExists;
+            $redirectResponseUrlExists = $this->checkIfUrlExists($request->url);
+            if ($redirectResponseUrlExists) {
+                return $redirectResponseUrlExists;
+            }
         }
         
         $data = $request->validated();
 
+        $shortenedUrl = $this->generateUniqueShortUrl();
+        $data['shortened_url'] = $shortenedUrl;
+
         $url->update($data);
 
-        return redirect('/')->with('success', 'URL deleted successfully.');
+        return redirect('/')->with('success', 'URL updated successfully.');
     }
 
     /**
