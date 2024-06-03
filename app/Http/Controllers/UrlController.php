@@ -95,12 +95,12 @@ class UrlController extends Controller
             if ($redirectResponseUrlExists) {
                 return $redirectResponseUrlExists;
             }
-        }
-        
-        $data = $request->validated();
 
-        $shortenedUrl = $this->generateUniqueShortUrl();
-        $data['shortened_url'] = $shortenedUrl;
+            $shortenedUrl = $this->generateUniqueShortUrl();
+            $data = array_merge($request->validated(), ['shortened_url' => $shortenedUrl]);
+        } else {
+            $data = $request->validated();
+        }
 
         $url->update($data);
 

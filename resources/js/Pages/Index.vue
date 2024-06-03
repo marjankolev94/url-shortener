@@ -36,14 +36,21 @@
 </template>
 
 <script setup>
-    import { defineProps, ref } from 'vue';
+    import { defineProps, ref, watch } from 'vue';
     import { Link, router } from '@inertiajs/vue3';
 
-    defineProps({
-        urls: Object
+    const props = defineProps({
+        urls: Object,
+        success: String
     });
 
-    const successMessage = ref('');
+    const successMessage = ref(props.success || '');
+
+    watch(() => props.success, (newValue) => {
+        successMessage.value = newValue;
+    });
+
+    successMessage.value = props.success;
 
     const confirmDelete = (id) => {
         if (confirm("Are you sure you want to delete this URL?")) {
