@@ -31,20 +31,25 @@
                 </tbody>
             </table>
         </div>
+        <div v-if="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
     </div>
 </template>
 
 <script setup>
-    import {defineProps} from 'vue';
+    import { defineProps, ref } from 'vue';
     import { Link, router } from '@inertiajs/vue3';
 
     defineProps({
         urls: Object
     });
 
+    const successMessage = ref('');
+
     const confirmDelete = (id) => {
         if (confirm("Are you sure you want to delete this URL?")) {
             router.delete(`/url/delete/${id}`);
+
+            successMessage.value = 'URL deleted successfully.';
         }
     };
 </script>

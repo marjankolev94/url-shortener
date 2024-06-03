@@ -99,7 +99,7 @@ class UrlController extends Controller
 
         $url->update($data);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'URL deleted successfully.');
     }
 
     /**
@@ -110,23 +110,6 @@ class UrlController extends Controller
         $url->delete();
 
         return redirect('/');
-    }
-
-    private function normalizeUrl($url)
-    {
-        $parsedUrl = parse_url($url);
-
-        $normalizedUrl = isset($parsedUrl['host']) ? $parsedUrl['host'] : '';
-        if (isset($parsedUrl['path'])) {
-            $normalizedUrl .= $parsedUrl['path'];
-        }
-        if (isset($parsedUrl['query'])) {
-            $normalizedUrl .= '?' . $parsedUrl['query'];
-        }
-
-        $normalizedUrl = str_replace('www.', '', $normalizedUrl);
-
-        return $normalizedUrl;
     }
 
     private function generateUniqueShortUrl()
