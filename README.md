@@ -18,7 +18,7 @@ URL Shortener App is a PHP/Laravel & Vue.JS application designed to generate sho
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/marjankolev94/primeyear-app.git
+   git clone https://github.com/marjankolev94/url-shortener.git
 
 2. Navigate to the project directory:
    ```bash
