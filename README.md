@@ -22,7 +22,7 @@ PrimeYear App is a PHP/Laravel & Vue.JS application designed to generate short h
 
 2. Navigate to the project directory:
    ```bash
-   cd primeyear-app
+   cd url-shortener
 
 3. Install dependencies:
    ```bash
