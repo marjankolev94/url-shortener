@@ -5,14 +5,15 @@ PrimeYear App is a PHP/Laravel & Vue.JS application designed to generate short h
 ## Features
 
 - **Create URL**: Form for Creating an URL. The app will store the original URL and from it will generate unique hashed version using Str library.
-- **Edit URL:**: Form for Editing previously stored URL, the original one, from which will create new hashed and unique version.
-- **Delete URL:**: Easy-to-use button for deleting previously entered URL.
+- **Edit URL**: Form for Editing previously stored URL, the original one, from which will create new hashed and unique version.
+- **Delete URL**: Easy-to-use button for deleting previously entered URL.
 
 ## Getting Started
 
 ### Prerequisites
 - PHP and Laravel installed on your system
 - A web server environment (such as XAMPP or Laravel Sail)
+- Vue 3 and Inertia installed on your system
 
 ### Installation
 1. Clone the repository:
