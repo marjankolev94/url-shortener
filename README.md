@@ -1,6 +1,6 @@
 # URL Shortener App
 
-URL Shortener App is a PHP/Laravel & Vue.JS application designed to generate short hashed and unique version of given URL in a format: example.com/[hash], and check if the shortened Url is detected as safe from Google Safe Browsing.
+URL Shortener App is a PHP/Laravel & Vue.JS application designed to generate short hashed and unique version of given URL in a format: `example.com/[hash]`, and check if the shortened Url is detected as safe from Google Safe Browsing.
 
 ## Features
 
