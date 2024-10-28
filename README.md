@@ -1,6 +1,6 @@
-# PrimeYear App
+# URL Shortener App
 
-PrimeYear App is a PHP/Laravel & Vue.JS application designed to generate short hashed and unique version of given URL in a format: example.com/[hash], and check if the shortened Url is detected as safe from Google Safe Browsing.
+URL Shortener App is a PHP/Laravel & Vue.JS application designed to generate short hashed and unique version of given URL in a format: example.com/[hash], and check if the shortened Url is detected as safe from Google Safe Browsing.
 
 ## Features
 
@@ -43,8 +43,9 @@ PrimeYear App is a PHP/Laravel & Vue.JS application designed to generate short h
 
 ### Usage
 - Open the app in your browser.
-- Enter a starting year in the input field.
-- Click "Submit" to view the first 30 prime years counted backward from the entered year.
+- On the Home Page, all previously created URLs are listed
+- on 'Create URL', a new page for Creating URL is open
+- From the Home Page, in the List where all URLs are listed, each URL can be Edited or Deleted
 ### Technologies Used
 - PHP: Server-side scripting language.
 - Laravel: PHP framework for building modern web applications.
